@@ -1,6 +1,7 @@
 import { DecimalPipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, computed, Inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -9,4 +10,9 @@ import { RouterLink } from '@angular/router';
   templateUrl: './top-bar.component.html',
   styleUrl: './top-bar.component.css',
 })
-export class TopBarComponent {}
+export class TopBarComponent {
+  count = computed(() => this.cartService.cart().count);
+  total = computed(() => this.cartService.cart().total);
+
+  readonly cartService = Inject(CartService);
+}
