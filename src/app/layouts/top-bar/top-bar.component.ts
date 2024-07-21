@@ -14,5 +14,5 @@ export class TopBarComponent {
   count = computed(() => this.cartService.cart().count);
   total = computed(() => this.cartService.cart().total);
 
-  readonly cartService = Inject(CartService);
+  constructor(private cartService: CartService) {}
 }

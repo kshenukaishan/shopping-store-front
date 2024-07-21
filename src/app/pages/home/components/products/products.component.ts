@@ -23,5 +23,7 @@ export class ProductsComponent {
       price: product.price,
       quantity: 1,
     });
+
+    console.log(product.price);
   }
 }
