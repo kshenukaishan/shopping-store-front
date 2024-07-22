@@ -17,11 +17,11 @@
       </div>
       <div class="content">
         @for (item of items(); track item.id) {
-        <!-- <app-cart-item-card
+        <app-cart-item-card
           [item]="item"
           (itemQuantityUpdate)="onItemQuantityUpdate($event, item.id)"
           (removeItem)="onRemoveItem(item.id)"
-        ></app-cart-item-card> -->
+        ></app-cart-item-card>
         }
       </div>
     </div>
