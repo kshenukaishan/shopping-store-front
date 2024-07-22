@@ -13,7 +13,7 @@ import { CartService } from '../../../../services/cart.service';
 export class ProductsComponent {
   products = PRODUCTS;
 
-  readonly cartService = Inject(CartService);
+  constructor(private cartService: CartService) {}
 
   onAdd(product: Product) {
     this.cartService.addItem({
